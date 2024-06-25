@@ -10,6 +10,7 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(to bottom, #ffffff, #00aaff);
             color: #333;
+            height: 100vh;
         }
         header {
             background: #333;
@@ -31,7 +32,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: calc(100vh - 40px); /* Adjust height to fit within the viewport minus header */
             text-align: center;
         }
         .intro {
@@ -65,12 +66,6 @@
                 transform: translateY(-5px);
             }
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
-            color: #fff;
-        }
     </style>
 </head>
 <body>
@@ -85,7 +80,7 @@
     <div class="container" id="home">
         <div class="intro">Hello! I'm Saumil</div>
         <button class="more-button" onclick="window.location.href='about.html'">
-            More
+            who are you?
             <span class="arrow">↓</span>
         </button>
     </div>
