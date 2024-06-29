@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,6 +65,8 @@
             margin: 20px 0;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: left;
+            display: flex;
+            align-items: flex-start;
         }
         .project h3 {
             margin-top: 0;
@@ -80,12 +82,16 @@
         }
         .grass-image {
             border-radius: 10px;
-            max-width: 80%;
+            max-width: 200px;
             height: auto;
-            display: block;
-            margin: 0 auto 15px;
+            margin-right: 20px;
+            flex-shrink: 0;
+            display: inline-block; /* Add this line */
         }
-        .project p {
+        .project-details {
+            flex: 1;
+        }
+        .project p, .project ul {
             margin-bottom: 10px;
             line-height: 1.6;
         }
@@ -110,21 +116,40 @@
     <div class="content">
         <section id="projects">
             <h2>Projects</h2>
+            
             <div class="project">
                 <img class="grass-image" src="https://github.com/swiftinsg/branding/blob/main/appicons/2022/Grass.jpg?raw=true" alt="Grass Image">
-                <h3><a href="https://apps.apple.com/us/app/grass-grow-plants/id6444735516" target="_blank">Grass</a></h3>
-                <p>Personalize your growing experience</p>
-                <p>Are you tired of your plants dying despite everything you do to take care of them? Use Grass!</p>
-                <p>Grass keeps you on top of your watering and fertilization needs, keeping your plants happy and alive.</p>
-                <p><strong>Features:</strong></p>
-                <ul>
-                    <li>Sends timely notifications for you to water your plants in a timely manner.</li>
-                    <li>Colourful dashboards with straight-to-the-point visuals so you can spend less time jumping around menus to find what you need.</li>
-                    <li>You get to increase the greenery in your home or workplace!</li>
-                </ul>
-                <p>This app was created by Saumil Anand, James Kuang Zhongchuan, Jeong Wonho & Loh Hao Yuan under the 2022 Swift Accelerator Programme.</p>
+                <div class="project-details">
+                    <h3><a href="https://apps.apple.com/us/app/grass-grow-plants/id6444735516" target="_blank">Grass</a></h3>
+                    <p>Personalize your growing experience</p>
+                    <p>Are you tired of your plants dying despite everything you do to take care of them? Use Grass!</p>
+                    <p>Grass keeps you on top of your watering and fertilization needs, keeping your plants happy and alive.</p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Sends timely notifications for you to water your plants in a timely manner.</li>
+                        <li>Colourful dashboards with straight-to-the-point visuals so you can spend less time jumping around menus to find what you need.</li>
+                        <li>You get to increase the greenery in your home or workplace!</li>
+                    </ul>
+                </div>
             </div>
+            
+            <div class="project">
+                <img class="grass-image" src="https://example.com/new-project-image.jpg" alt="New Project Image">
+                <div class="project-details">
+                    <h3><a href="https://example.com/new-project-link" target="_blank">New Project</a></h3>
+                    <p>Brief description of the new project.</p>
+                    <p>Details about what the new project does and its purpose.</p>
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Feature 1 of the new project.</li>
+                        <li>Feature 2 of the new project.</li>
+                        <li>Feature 3 of the new project.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
         </section>
     </div>
 </body>
-</html>
+</html> -->
