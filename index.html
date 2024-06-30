@@ -1,8 +1,6 @@
-Got it! Let's revert to the original blue gradient background for your portfolio website. Here's the updated code:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,6 +15,7 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             flex-direction: column;
             align-items: center;
         }
+
         header {
             background: #333;
             color: white;
@@ -29,9 +28,11 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: background-color 0.3s;
         }
+
         header.scrolled {
             background-color: #222;
         }
+
         header nav a {
             color: white;
             margin: 0 15px;
@@ -39,9 +40,11 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             font-weight: bold;
             transition: color 0.3s;
         }
+
         header nav a:hover {
             color: #00aaff;
         }
+
         .section {
             width: 100%;
             max-width: 1200px;
@@ -49,6 +52,7 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             text-align: center;
             margin: 0 auto;
         }
+
         .intro-section {
             background: #1e3c72;
             color: #f0f0f0;
@@ -59,10 +63,12 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             align-items: center;
             position: relative;
         }
+
         .intro-section h1 {
             font-size: 3em;
             margin-bottom: 20px;
         }
+
         .more-button {
             background-color: #555;
             color: #f0f0f0;
@@ -74,9 +80,11 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             position: relative;
             transition: background-color 0.3s;
         }
+
         .more-button:hover {
             background-color: #444;
         }
+
         .arrow {
             display: block;
             margin-top: 10px;
@@ -84,48 +92,66 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             color: #00aaff;
             animation: bounce 2s infinite;
         }
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateY(0);
             }
+
             40% {
                 transform: translateY(-10px);
             }
+
             60% {
                 transform: translateY(-5px);
             }
         }
+
         .skills-section {
             background: #2a5298;
             color: #f0f0f0;
         }
+
         .skills-section h2 {
             margin: 0 0 20px;
             font-size: 2.5em;
         }
+
         .skills-list {
             list-style: none;
             padding: 0;
             font-size: 1.2em;
         }
+
         .skills-list li {
             margin: 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .skills-list img {
             width: 30px;
             height: 30px;
             margin-right: 10px;
         }
-        .about-section, .projects-section, .certification-section, .contact-section {
+
+        .about-section,
+        .projects-section,
+        .certification-section,
+        .contact-section {
             background: #333;
             color: #f0f0f0;
         }
+
         .projects-section {
             background: #444;
         }
+
         .bouncing-arrow {
             margin: 20px 0;
             font-size: 2em;
@@ -133,6 +159,7 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             animation: bounce 2s infinite;
             cursor: pointer;
         }
+
         .project {
             background: #555;
             border: 1px solid #666;
@@ -144,6 +171,7 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             display: flex;
             align-items: flex-start;
         }
+
         .project img {
             border-radius: 10px;
             max-width: 200px;
@@ -151,44 +179,52 @@ Got it! Let's revert to the original blue gradient background for your portfolio
             margin-right: 20px;
             flex-shrink: 0;
         }
+
         .project-details {
             flex: 1;
         }
+
         .project a {
             color: #00aaff;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
         }
+
         .project a:hover {
             text-decoration: underline;
         }
+
         ul {
             list-style: none;
             padding: 0;
             text-align: left;
         }
+
         ul li {
             margin-bottom: 5px;
         }
+
         @media (max-width: 768px) {
             .more-button {
                 font-size: 1em;
                 padding: 8px 16px;
             }
+
             .intro-section h1 {
                 font-size: 2em;
             }
         }
     </style>
 </head>
+
 <body>
     <header id="header">
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
+            <a href="certifications.html">Certifications</a> <!-- Link to certifications.html -->
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -204,12 +240,14 @@ Got it! Let's revert to the original blue gradient background for your portfolio
 
     <div class="section about-section" id="about">
         <h2>About Me</h2>
-        <p>This is the About Me section where you can learn more about me.</p>
+        <p>I'm Saumil, a 14-year-old from Singapore, and I do Swift (amongst other things).</p>
+        <p> Here's some of my projects!</p>
+
         <div class="bouncing-arrow" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
             ↓
         </div>
     </div>
-
+    
     <div class="section projects-section" id="projects">
         <h2>Projects</h2>
         <div class="project">
@@ -248,30 +286,12 @@ Got it! Let's revert to the original blue gradient background for your portfolio
 
     <div class="section certification-section" id="certifications">
         <h2>Certifications</h2>
-        <ul class="certification-list">
-            <li>Certification 1</li>
-            <li>Certification 2</li>
-            <li>Certification 3</li>
-        </ul>
+        <p>View my certifications <a href="certifications.html">here</a>.</p> <!-- Link to certifications.html -->
         <div class="bouncing-arrow" onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })">
             ↓
         </div>
     </div>
-
-    <div class="section
-
-    <div class="section certification-section" id="certifications">
-        <h2>Certifications</h2>
-        <ul class="certification-list">
-            <li>Certification 1</li>
-            <li>Certification 2</li>
-            <li>Certification 3</li>
-        </ul>
-        <div class="bouncing-arrow" onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })">
-            ↓
-        </div>
-    </div>
-
+    
     <div class="section skills-section" id="skills">
         <h2>Skills</h2>
         <ul class="skills-list">
@@ -290,7 +310,7 @@ Got it! Let's revert to the original blue gradient background for your portfolio
     </div>
 
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -300,4 +320,5 @@ Got it! Let's revert to the original blue gradient background for your portfolio
         });
     </script>
 </body>
+
 </html>
