@@ -67,89 +67,39 @@
         .intro-section h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            color: transparent; /* Hide original text */
         }
 
-        .more-button {
-            background-color: #555;
-            color: #f0f0f0;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            border-radius: 20px;
-            position: relative;
-            transition: background-color 0.3s;
+        .threejs-text {
+            position: absolute;
+            top: 50%; /* Adjust as needed */
+            left: 50%; /* Adjust as needed */
+            transform: translate(-50%, -50%);
         }
 
-        .more-button:hover {
-            background-color: #444;
-        }
-
-        .arrow {
-            display: block;
-            margin-top: 10px;
-            font-size: 2em;
-            color: #00aaff;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        .skills-section {
-            background: #2a5298;
-            color: #f0f0f0;
-        }
-
-        .skills-section h2 {
+        .skills-section h2,
+        .about-section h2,
+        .projects-section h2,
+        .certification-section h2,
+        .contact-section h2 {
             margin: 0 0 20px;
             font-size: 2.5em;
+            color: transparent; /* Hide original text */
         }
 
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            font-size: 1.2em;
-        }
-
+        .section p,
         .skills-list li {
-            margin: 10px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: transparent; /* Hide original text */
         }
 
-        .skills-list img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
+        .project-details p,
+        .skills-list {
+            color: transparent; /* Hide original text */
         }
 
-        .about-section,
-        .projects-section,
-        .certification-section,
-        .contact-section {
-            background: #333;
-            color: #f0f0f0;
-        }
-
-        .projects-section {
-            background: #444;
+        .project a,
+        .certifications a {
+            color: transparent; /* Hide original text */
         }
 
         .bouncing-arrow {
@@ -206,11 +156,6 @@
         }
 
         @media (max-width: 768px) {
-            .more-button {
-                font-size: 1em;
-                padding: 8px 16px;
-            }
-
             .intro-section h1 {
                 font-size: 2em;
             }
@@ -231,7 +176,8 @@
     </header>
 
     <div class="section intro-section" id="home">
-        <h1>Hello! I'm Saumil</h1>
+        <!-- Original text replaced with Three.js 3D text -->
+        <h1 class="threejs-text" id="intro-text"></h1>
         <button class="more-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' })">
             Who are you?
             <span class="arrow">↓</span>
@@ -239,17 +185,16 @@
     </div>
 
     <div class="section about-section" id="about">
-        <h2>About Me</h2>
-        <p>I'm Saumil, a 14-year-old from Singapore, and I do Swift (amongst other things).</p>
-        <p> Here's some of my projects!</p>
-
+        <!-- Original text replaced with Three.js 3D text -->
+        <h2 class="threejs-text" id="about-text"></h2>
         <div class="bouncing-arrow" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
             ↓
         </div>
     </div>
     
     <div class="section projects-section" id="projects">
-        <h2>Projects</h2>
+        <!-- Original text replaced with Three.js 3D text -->
+        <h2 class="threejs-text" id="projects-text"></h2>
         <div class="project">
             <img src="https://github.com/swiftinsg/branding/blob/main/appicons/2022/Grass.jpg?raw=true" alt="Grass Image">
             <div class="project-details">
@@ -285,7 +230,8 @@
     </div>
 
     <div class="section certification-section" id="certifications">
-        <h2>Certifications</h2>
+        <!-- Original text replaced with Three.js 3D text -->
+        <h2 class="threejs-text" id="certifications-text"></h2>
         <p>View my certifications <a href="certifications.html">here</a>.</p> <!-- Link to certifications.html -->
         <div class="bouncing-arrow" onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })">
             ↓
@@ -293,7 +239,8 @@
     </div>
     
     <div class="section skills-section" id="skills">
-        <h2>Skills</h2>
+        <!-- Original text replaced with Three.js 3D text -->
+        <h2 class="threejs-text" id="skills-text"></h2>
         <ul class="skills-list">
             <li><img src="https://example.com/skill1.png" alt="Skill 1"> Skill 1</li>
             <li><img src="https://example.com/skill2.png" alt="Skill 2"> Skill 2</li>
@@ -305,19 +252,86 @@
     </div>
 
     <div class="section contact-section" id="contact">
-        <h2>Contact</h2>
+        <!-- Original text replaced with Three.js 3D text -->
+        <h2 class="threejs-text" id="contact-text"></h2>
         <p>You can reach me at: <a href="mailto:saumil@example.com">saumil@example.com</a></p>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        // Three.js setup for 3D text
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const loader = new THREE.FontLoader();
+        loader.load('https://cdn.jsdelivr.net/npm/three/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+            const textParams = {
+                font: font,
+                size: 40,
+                height: 5,
+                curveSegments: 12,
+                bevelEnabled: true,
+                bevelThickness: 2,
+                bevelSize: 1,
+                bevelSegments: 3
+            };
+
+            // Intro Section Text
+            const introTextGeometry = new THREE.TextGeometry("Hello! I'm Saumil", textParams);
+            const introTextMaterial = new THREE.MeshStandardMaterial({ color: '#ffffff' });
+            const introTextMesh = new THREE.Mesh(introTextGeometry, introTextMaterial);
+            introTextMesh.position.set(-280, 50, -50); // Adjust position as needed
+            introTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(introTextMesh);
+
+            // About Section Text
+            const aboutTextGeometry = new THREE.TextGeometry("About Me", textParams);
+            const aboutTextMesh = new THREE.Mesh(aboutTextGeometry, introTextMaterial);
+            aboutTextMesh.position.set(-280, 50, -150); // Adjust position as needed
+            aboutTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(aboutTextMesh);
+
+            // Projects Section Text
+            const projectsTextGeometry = new THREE.TextGeometry("Projects", textParams);
+            const projectsTextMesh = new THREE.Mesh(projectsTextGeometry, introTextMaterial);
+            projectsTextMesh.position.set(-280, 50, -250); // Adjust position as needed
+            projectsTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(projectsTextMesh);
+
+            // Certifications Section Text
+            const certificationsTextGeometry = new THREE.TextGeometry("Certifications", textParams);
+            const certificationsTextMesh = new THREE.Mesh(certificationsTextGeometry, introTextMaterial);
+            certificationsTextMesh.position.set(-280, 50, -350); // Adjust position as needed
+            certificationsTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(certificationsTextMesh);
+
+            // Skills Section Text
+            const skillsTextGeometry = new THREE.TextGeometry("Skills", textParams);
+            const skillsTextMesh = new THREE.Mesh(skillsTextGeometry, introTextMaterial);
+            skillsTextMesh.position.set(-280, 50, -450); // Adjust position as needed
+            skillsTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(skillsTextMesh);
+
+            // Contact Section Text
+            const contactTextGeometry = new THREE.TextGeometry("Contact", textParams);
+            const contactTextMesh = new THREE.Mesh(contactTextGeometry, introTextMaterial);
+            contactTextMesh.position.set(-280, 50, -550); // Adjust position as needed
+            contactTextMesh.rotation.y = Math.PI * 0.5; // Rotate text if needed
+            scene.add(contactTextMesh);
         });
+
+        camera.position.set(0, 0, 800); // Adjust camera position
+        camera.lookAt(scene.position);
+
+        const animate = function () {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+
+        animate();
     </script>
 </body>
 
